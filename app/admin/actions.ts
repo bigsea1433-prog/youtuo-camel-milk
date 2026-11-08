@@ -1,0 +1,9 @@
+'use server';
+import {redirect} from 'next/navigation';import {revalidatePath} from 'next/cache';import {cookies} from 'next/headers';import {authenticated,login} from '../../lib/auth';import db from '../../lib/db';
+const attempts=new Map<string,{n:number,time:number}>();
+export async function signIn(data:FormData){const now=Date.now();const record=attempts.get('login');if(record&&now-record.time<60000&&record.n>=8)redirect('/admin?error=locked');if(!record||now-record.time>=60000)attempts.set('login',{n:1,time:now});else record.n++;if(!await login(String(data.get('password')||'')))redirect('/admin?error=invalid');redirect('/admin')}
+async function check(){if(!await authenticated())throw new Error('请先登录')}
+export async function signOut(){await check();(await cookies()).delete('yt_session');redirect('/admin')}
+export async function save(data:FormData){await check();const title=String(data.get('title')||'').trim().slice(0,200);const body=String(data.get('body')||'').trim().slice(0,30000);const kind=data.get('kind')==='product'?'product':'news';const status=data.get('status')==='published'?'published':'draft';if(!title||!body)throw new Error('标题和正文不能为空');const id=Number(data.get('id'));if(id)db.prepare('UPDATE content SET title=?,body=?,status=? WHERE id=?').run(title,body,status,id);else db.prepare('INSERT INTO content(title,body,kind,status) VALUES(?,?,?,?)').run(title,body,kind,status);revalidatePath('/','layout');redirect('/admin')}
+export async function remove(data:FormData){await check();db.prepare('DELETE FROM content WHERE id=?').run(Number(data.get('id')));revalidatePath('/','layout');redirect('/admin')}
+export async function settings(data:FormData){await check();for(const key of ['headline','intro','about','phone','email','address'])db.prepare('INSERT INTO settings VALUES(?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value').run(key,String(data.get(key)||'').slice(0,10000));revalidatePath('/','layout');redirect('/admin')}

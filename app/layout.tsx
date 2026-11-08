@@ -1,0 +1,4 @@
+import './globals.css';
+import Link from 'next/link';
+export const metadata={title:{default:'优驼｜源自新疆的驼乳品牌',template:'%s｜优驼'},description:'了解优驼的企业故事、牧场与生产布局、产品及品牌动态。',robots:{index:false,follow:false}};
+export default function Layout({children}:{children:React.ReactNode}){return <html lang="zh-CN"><body><div className="preview">优驼官网 · 内容预览版</div><header><Link className="logo" href="/">优驼<span>U CAMEL · XINJIANG</span></Link><nav><Link href="/">首页</Link><Link href="/about">关于优驼</Link><Link href="/pastures">牧场与品质</Link><Link href="/products">产品中心</Link><Link href="/news">品牌动态</Link><Link href="/contact">联系我们 ↗</Link></nav></header>{children}<footer><div className="foot"><div className="logo">优驼<span>FROM XINJIANG, WITH CARE</span></div><p>立足新疆，探索地标食材的营养价值。<br/>以骆驼产业为核心，连接自然与日常。</p><div><Link href="/contact">联系优驼 ↗</Link><br/><Link href="/admin">客户管理后台</Link></div></div><small>© {new Date().getFullYear()} 优驼　企业全称及备案信息待补充 · 预览内容不作为交易承诺</small></footer></body></html>}
