@@ -1,0 +1,6 @@
+import {setting} from '../lib/db';
+import info from '../lib/company-public.json';
+// Public overview deliberately excludes registration identifiers and personnel records.
+export function CompanyDetails(){return <div className="materialDetails"><h3>企业概览</h3><dl>{[['企业名称',setting('companyName',info.company)],['品牌',setting('brandName',info.brand)],['成立时间',setting('founded',info.founded)],['产业方向',setting('industry','养殖 · 研发 · 生产加工')]].map(([k,v])=><div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl></div>}
+export function PatentDetails(){return <details className="materialDetails"><summary>查看专利资料清单 · 共{info.patents.length}条</summary><p>依据企业资料列示，含发明、实用新型与外观设计。权利主体、法律状态与有效性待原件及最新登记资料核对，不将清单条数等同于当前有效技术专利数量。</p><div className="patentTable">{info.patents.map(p=><div key={p.number}><strong>{p.name}</strong><span>{p.number}</span><small>{p.type}</small></div>)}</div></details>}
+export function WelfareRecords(){return <div className="materialDetails"><h3>企业资料中的公益记录</h3><p>以下依据企业提交的荣誉清单整理，证书原件、活动过程、合作范围及具体成果待补充，不扩大解释为长期合作关系。</p><div className="researchGrid">{[['2022年12月','抗疫志愿服务','红光社区相关党组织'],['2025年1月','红十字“急救计划”相关捐赠','原表列示红十字基金会、柯坪县红十字会，具体颁发主体待原件核对'],['2026年1月','捐赠证书与爱心单位','昌吉州慈善总会']].map(([date,title,issuer])=><article key={title}><small>{date}</small><h3>{title}</h3><p>{issuer}</p><span>证书与现场纪实待补充</span></article>)}</div></div>}

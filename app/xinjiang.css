@@ -12,3 +12,40 @@ header nav{align-items:center;gap:23px;margin:0}
 @media(max-width:520px){body>header{display:flex;flex-wrap:wrap;padding:12px 6%;gap:12px}header nav{width:100%;justify-content:flex-start;gap:4px 17px;font-size:10px}header nav a{padding:3px 0}header .logo .brandWord{font-size:27px}}
 
 .welfareSection{background:#f4f8f1;border-top:1px solid #d9e7d3}.welfareIntro{display:grid;grid-template-columns:1.3fr .7fr;gap:60px;margin-bottom:40px}.welfareIntro p{font-size:14px;line-height:2}.welfareValues{display:flex;flex-direction:column;justify-content:center;gap:12px}.welfareValues span{border-bottom:1px solid #d7e4d0;padding:10px 0;font-size:13px;color:#64825a}.welfareFeature{display:grid;grid-template-columns:1fr 1fr;background:white;border:1px solid #dce8d5}.welfareFeature>.placeholder{border:0;background:#e7efdf;min-height:360px;color:#8ca17d}.welfareFeature>div:last-child{padding:45px}.welfareFeature h3{font-family:'SimSun',serif;font-size:30px;line-height:1.6}.welfareFeature p:not(.eyebrow){font-size:13px;color:#819575}.welfareFields{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}.welfareFields article{border-top:1px solid #ccdfc2;padding-top:25px}.welfareFields span{font-size:10px;color:#ac2937}.welfareFields h3{font-size:19px;margin-top:20px}.welfareFields p{font-size:12px;color:#7f9472}@media(max-width:850px){.welfareIntro,.welfareFeature{grid-template-columns:1fr;gap:25px}.welfareFeature{gap:0}.welfareFeature>div:last-child{padding:30px}.welfareFeature>.placeholder{min-height:260px}}@media(max-width:520px){.welfareFields{grid-template-columns:1fr}.welfareFeature h3{font-size:25px}}
+/* Lighter, compact closing area */
+.contactV2{padding:44px 7% 46px;min-height:0;background:#f1f6f1;color:#07533c;border-top:1px solid #e1e9e1}
+.contactV2 .eyebrow{color:#718c7d;margin-bottom:16px;font-size:10px}
+.contactV2 h2{font-size:clamp(28px,2.5vw,38px);line-height:1.45}
+.contactV2:after{width:230px;height:230px;top:-90px;right:15%;border-color:#07533c09}
+.contactV2 .roundLink{width:64px;height:64px;font-size:30px;border-color:#ad2632}
+.expandedFooter{background:#fff;color:#07533c;border-top:1px solid #e1e9e1}
+.footerContactRow{padding:28px 0;gap:36px;border-bottom-color:#dfe8df}
+.footerContactRow strong{font-size:18px}
+.footerContactRow p{color:#536c60;margin:10px 0 6px}
+.footerContactRow small,.footerChannels>span,.footerLegalRow{color:#718477}
+.footerChannels>div{margin-top:13px;gap:12px 18px}
+.footerChannels a:hover,.footerLegalRow a:hover{color:#ad2632}
+.footerLegalRow{padding:16px 0;gap:12px 22px;line-height:1.8}
+@media(max-width:850px){.contactV2{padding:32px 7%}.footerContactRow{gap:22px;padding:24px 0}.contactV2 .roundLink{width:54px;height:54px;font-size:26px}}
+@media(max-width:520px){.contactV2 h2{font-size:26px}.contactV2>div{gap:20px}.footerContactRow p{font-size:11px}.footerChannels>div{font-size:10px;gap:10px 16px}.footerLegalRow{font-size:9px}}
+
+/* A green closing band, approximately one third of a desktop viewport. */
+.contactV2{background:#07533c;color:#fff;min-height:30svh;padding:32px 7%;display:flex;flex-direction:column;justify-content:center}
+.contactV2 .eyebrow{color:#c7dcca;margin-bottom:14px}
+.contactV2:after{border-color:#ffffff10}
+.homeResearch{display:grid;grid-template-columns:.85fr 1.15fr;gap:9%;align-items:center;background:#fff}
+.homeResearch>div>p:not(.eyebrow){color:#728477;font-size:14px;max-width:430px}
+.researchPhotoSlots .placeholder{min-height:300px;background:#f1f5ef;border:1px dashed #bdcfbf;color:#718b78}
+.researchSlotLabels{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:14px;font-size:11px;color:#7d9080}
+.researchSlotLabels span{border-bottom:1px solid #dce6dc;padding-bottom:10px}
+.nutritionSection{background:#f5f8f2}
+.nutritionCards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.nutritionCards article{background:white;border-top:2px solid #749b79;padding:30px}
+.nutritionCards small{color:#a52634;font-size:10px;letter-spacing:2px}
+.nutritionCards h3{font-size:21px;margin:20px 0 14px}
+.nutritionCards p{font-size:13px;color:#728175;margin:0;line-height:2}
+.nutritionFoot{display:flex;gap:35px;align-items:start;margin-top:26px;font-size:11px;color:#7d8b7d}
+.nutritionFoot p{max-width:850px;margin:0}.nutritionFoot a{flex-shrink:0;border-bottom:1px solid #c6d4c4}
+@media(max-width:850px){.homeResearch{grid-template-columns:1fr;gap:28px}.nutritionCards{gap:15px}.nutritionCards article{padding:22px}.nutritionFoot{flex-direction:column;gap:12px}}
+@media(max-width:520px){.contactV2{min-height:0;padding:32px 7%}.nutritionCards{grid-template-columns:1fr}.researchPhotoSlots .placeholder{min-height:230px}.nutritionCards h3{margin-top:12px}.researchSlotLabels{font-size:10px}}
+.knowledgeTopics{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:38px}.knowledgeTopics article{border:1px solid #dce6dc;padding:26px;background:#fff}.knowledgeTopics small{font-size:9px;letter-spacing:2px;color:#a52634}.knowledgeTopics h3{font-size:23px;margin:16px 0 12px}.knowledgeTopics p{font-size:13px;color:#718175;min-height:50px}.knowledgeTopics .textLink{font-size:11px}.articleBody a{color:#087453;text-decoration:underline;text-underline-offset:4px}.articleContext{display:flex;flex-wrap:wrap;gap:12px 24px;border-top:1px solid #dce6dc;padding:24px 0;margin-top:32px;font-size:12px}.articleContext a:hover{color:#a52634}@media(max-width:650px){.knowledgeTopics{grid-template-columns:1fr;gap:14px}.knowledgeTopics article{padding:22px}.knowledgeTopics p{min-height:0}}

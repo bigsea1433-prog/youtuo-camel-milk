@@ -1,0 +1,9 @@
+export const siteFields=[['headline','首页主标题'],['intro','首页品牌简介'],['about','完整企业介绍'],['phone','联系电话'],['email','企业邮箱'],['address','详细地址'],['heroImage','首页主视觉素材ID'],['pastureImage','牧场展示素材ID'],['companyName','企业主体全称'],['contactPerson','业务联系人与接待信息'],['icp','ICP备案号'],['police','公安备案号'],['wechatName','微信/公众号名称'],['wechatUrl','微信/公众号官方链接'],['wechatImage','微信/公众号二维码素材ID'],['videoName','视频号名称'],['videoUrl','视频号官方链接'],['videoImage','视频号二维码素材ID'],['douyinName','抖音账号名称'],['douyinUrl','抖音账号官方链接'],['douyinImage','抖音账号二维码素材ID'],['tmallName','天猫店铺名称'],['tmallUrl','天猫店铺官方链接'],['tmallImage','天猫店铺二维码素材ID'],['douyinShopName','抖音店铺名称'],['douyinShopUrl','抖音店铺官方链接'],['douyinShopImage','抖音店铺二维码素材ID'],['redbookName','小红书名称'],['redbookUrl','小红书官方链接'],['redbookImage','小红书二维码素材ID'],['serviceName','微信服务号名称'],['serviceUrl','微信服务号官方链接'],['serviceImage','微信服务号二维码素材ID'],['miniName','微信小程序名称'],['miniUrl','微信小程序链接'],['miniImage','微信小程序二维码素材ID'],['researchImage','研发实验室图片'],['factoryKepingImage','柯坪工厂实景'],['factoryMuleiImage','木垒工厂实景'],['researchIntro','研发介绍'],['factoryIntro','工厂布局介绍'],['qualityIntro','品质管理介绍'],['brandName','品牌名称'],['founded','成立时间'],['industry','产业方向'],['kepingPastureImage','柯坪牧场实景'],['muleiPastureImage','木垒牧场实景'],['welfareImage','公益纪实主图']] as const;
+
+export const siteFieldGroups=[
+ ['企业介绍与公开信息',siteFields.filter(([key])=>['companyName','brandName','about','founded','industry'].includes(key))],
+ ['页面文案',siteFields.filter(([key])=>['headline','intro','researchIntro','factoryIntro','qualityIntro'].includes(key))],
+ ['官网图片',siteFields.filter(([key])=>key.endsWith('Image')&&!['wechatImage','videoImage','douyinImage','tmallImage','douyinShopImage','redbookImage','serviceImage','miniImage'].includes(key))],
+ ['联系方式与备案',siteFields.filter(([key])=>['phone','email','address','contactPerson','icp','police'].includes(key))],
+ ['社交媒体与官方店铺',siteFields.filter(([key])=>/^(wechat|video|douyin|tmall|redbook|service|mini)/.test(key))],
+] as const;

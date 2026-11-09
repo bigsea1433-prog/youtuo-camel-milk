@@ -4,3 +4,10 @@ data/
 .env*
 *.log
 next-env.d.ts
+__pycache__/
+*.pyc
+*.sqlite*
+*.pem
+*.key
+*password*
+*credentials*
